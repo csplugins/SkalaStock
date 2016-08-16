@@ -7,4 +7,12 @@ class WelcomeController < ActionController::Base
 
   end
 
+  def search
+    #render html: '<b>html goes here<b/>'.html_safe
+    yahoo_client = YahooFinance::Client.new
+    data = yahoo_client.quotes(["AAPL", "AAPL", "AAPL"], [:ask, :symbol])
+    @data = data[0].ask
+    @dataSymbol = data[0].symbol
+  end
+
 end
