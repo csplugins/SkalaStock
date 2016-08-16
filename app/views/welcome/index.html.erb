@@ -1,0 +1,11 @@
+Welcome to SkalaStock!
+
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Market cap:") %>
+  <%= text_field_tag(:q) %>
+  <%= label_tag(:r, "Dividend:") %>
+  <%= text_field_tag(:r) %>
+  <%= label_tag(:s, "PE Ratio:") %>
+  <%= text_field_tag(:s) %>
+  <%= submit_tag("Search") %>
+<% end %>
