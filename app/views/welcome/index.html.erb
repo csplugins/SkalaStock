@@ -1,14 +1,14 @@
 Welcome to SkalaStock!
 <br />
 <%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:q, "Market cap:") %>
-  <%= text_field_tag(:q, nil, placeholder: "1,000,000,000") %>
+  <%= label_tag(:mktCap, "Market cap:") %>
+  <%= text_field_tag(:mktCap, nil, placeholder: "1,000,000,000") %>
   <br />
-  <%= label_tag(:r, "PE Ratio:") %>
-  <%= text_field_tag(:r, nil, placeholder: "20") %>
+  <%= label_tag(:dividend, "Dividend:") %>
+  <%= text_field_tag(:dividend, nil, placeholder: "2.5") %>
   <br />
-  <%= label_tag(:s, "Dividend:") %>
-  <%= text_field_tag(:s, nil, placeholder: "2.5") %>
+  <%= label_tag(:lowPercent, "Percent of low:") %>
+  <%= text_field_tag(:lowPercent, nil, placeholder: "20") %>
   <br />
   <%= submit_tag("Search") %>
 <% end %>

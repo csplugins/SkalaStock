@@ -28,7 +28,10 @@ tr:nth-child(even) {
 
   <% @dataSymbol.each do |t| %>
     <tr>
-      <td><%= t.symbol %></td>
+      <td>
+        <a target="_blank" href="http://finance.yahoo.com/quote/<%= t.symbol %>?p=<%= t.symbol %>"><%= t.symbol %></a>
+        <%= t.previous_close %>
+      </td>
       <td><%= t.pe_ratio %></td>
       <td><%= t.dividend_yield %></td>
       <td><%= t.market_capitalization %></td>

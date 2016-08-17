@@ -8,29 +8,34 @@ class WelcomeController < ActionController::Base
   end
 
   def search
-    if params[:q].present? == false
-      params[:q] = 123
+    if params[:mktCap].present? == false
+      params[:mktCap] = 1000000000
     end
-    if params[:r].present? == false
-      params[:r] = 123
+    if params[:dividend].present? == false
+      params[:dividend] = 2.5
     end
-    if params[:s].present? == false
-      params[:s] = 123
+    if params[:lowPercent].present? == false
+      params[:lowPercent] = 20
     end
     yahoo_client = YahooFinance::Client.new
-    #data = yahoo_client.quotes(["AAPL", "AAPL", "AAPL"], [:ask, :symbol])
-    data = yahoo_client.quotes(yahoo_client.symbols_by_market('us', 'nyse'), [:ask, :symbol, :pe_ratio, :market_capitalization, :dividend_yield, :high_52_weeks, :low_52_weeks ])
+    #data = yahoo_client.quotes(["FRO", "AAPL", "AAPL"], [:ask, :symbol])
+    data = yahoo_client.quotes(yahoo_client.symbols_by_market('us', 'nyse'), [:ask, :symbol, :pe_ratio, :market_capitalization, :dividend_yield, :high_52_weeks, :low_52_weeks, :previous_close ])
     @dataSymbol = []
     for item in data
-      next if item.pe_ratio.present? == false
-      next if item.market_capitalization.present? == false
-      next if item.dividend_yield.present? == false
-      next if item.pe_ratio > params[:r]
-      next if item.market_capitalization < params[:q]
-      next if item.dividend_yield < params[:s]
+      next if item.market_capitalization == "N/A"
       next if item.dividend_yield == "N/A"
-
-      puts item.dividend_yield
+      next if item.pe_ratio == "N/A"
+      #next if item.market_capitalization < params[:mktCap]
+      #puts item.market_capitalization
+      next if item.market_capitalization.to_s !~ /B/
+      next if item.dividend_yield.to_f < params[:dividend].to_f
+      yearLow = item.low_52_weeks.to_f
+      yearHigh = item.high_52_weeks.to_f
+      percent = params[:lowPercent].to_f * 0.01
+      tenPercentLow = yearHigh - yearLow
+      tenPercentLow *= percent.to_f
+      tenPercentLow += yearLow
+      next if item.previous_close.to_f > tenPercentLow
 
       @dataSymbol.push(item)
     end
