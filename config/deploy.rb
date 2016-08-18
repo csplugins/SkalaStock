@@ -1,5 +1,5 @@
 # config valid only for Capistrano 3.1
-lock '3.1.0'
+lock '3.5.0'
 
 set :application, 'SkalaStock'
 set :repo_url, 'git@github.com:cws26/SkalaStock.git'

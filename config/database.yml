@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: SkalaStock_production
-  username: SkalaStock
-  password: <%= ENV['SKALASTOCK_DATABASE_PASSWORD'] %>
+  username: root
+  password: rootPassword
+# <%= ENV['SKALASTOCK_DATABASE_PASSWORD'] %>

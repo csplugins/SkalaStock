@@ -1,0 +1,65 @@
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+
+<table class="sortable">
+  <tr>
+    <th>Symbol</th>
+    <th>PE</th>
+    <th>Dividend(%)</th>
+    <th>Market Cap($)</th>
+    <th>52 Week High($)</th>
+    <th>52 Week Low($)</th>
+  </tr>
+
+  <% @dataSymbol.each do |t| %>
+    <tr>
+      <td>
+        <a target="_blank" href="http://finance.yahoo.com/quote/<%= t.symbol %>?p=<%= t.symbol %>"><%= t.symbol %></a>
+        <%= t.previous_close %>
+      </td>
+      <td><%= t.pe_ratio %></td>
+      <td><%= t.dividend_yield %></td>
+      <td><%= t.market_capitalization %></td>
+      <td><%= t.high_52_weeks %></td>
+      <td><%= t.low_52_weeks %></td>
+    </tr>
+  <% end %>
+
+</table>
+
+<script src="http://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+<script>
+  window.onload = function () {
+    var myTH = document.getElementsByTagName("th")[1];
+    sorttable.innerSortFunction.apply(myTH, []);
+  }
+</script>
+
+
+
+
+<% if false %>
+<%=
+  for data in @dataSymbol
+    data.symbol
+  end
+%>
+
+<%= raw @dataSymbol %>
+
+<% end %>

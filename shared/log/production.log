@@ -1,0 +1,26 @@
+I, [2016-08-18T04:14:49.596144 #10321]  INFO -- : Started GET "/" for 107.9.189.176 at 2016-08-18 04:14:49 +0000
+I, [2016-08-18T04:14:49.615289 #10321]  INFO -- : Processing by WelcomeController#index as HTML
+I, [2016-08-18T04:14:49.634546 #10321]  INFO -- :   Rendered welcome/index.html.erb (2.4ms)
+I, [2016-08-18T04:14:49.634956 #10321]  INFO -- : Completed 200 OK in 19ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+I, [2016-08-18T04:14:55.703623 #10321]  INFO -- : Started GET "/search?utf8=%E2%9C%93&mktCap=&dividend=&lowPercent=&commit=Search" for 107.9.189.176 at 2016-08-18 04:14:55 +0000
+I, [2016-08-18T04:14:55.706222 #10321]  INFO -- : Processing by WelcomeController#search as HTML
+I, [2016-08-18T04:14:55.706372 #10321]  INFO -- :   Parameters: {"utf8"=>"✓", "mktCap"=>"", "dividend"=>"", "lowPercent"=>"", "commit"=>"Search"}
+I, [2016-08-18T04:15:03.860225 #10321]  INFO -- :   Rendered welcome/search.html.erb (2.0ms)
+I, [2016-08-18T04:15:03.860500 #10321]  INFO -- : Completed 200 OK in 8154ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+I, [2016-08-18T04:15:42.901591 #10321]  INFO -- : Started GET "/" for 107.9.189.176 at 2016-08-18 04:15:42 +0000
+I, [2016-08-18T04:15:42.903672 #10321]  INFO -- : Processing by WelcomeController#index as HTML
+I, [2016-08-18T04:15:42.905802 #10321]  INFO -- :   Rendered welcome/index.html.erb (0.9ms)
+I, [2016-08-18T04:15:42.906132 #10321]  INFO -- : Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+I, [2016-08-18T04:15:47.991905 #10321]  INFO -- : Started GET "/search?utf8=%E2%9C%93&mktCap=&dividend=&lowPercent=&commit=Search" for 107.9.189.176 at 2016-08-18 04:15:47 +0000
+I, [2016-08-18T04:15:47.993481 #10321]  INFO -- : Processing by WelcomeController#search as HTML
+I, [2016-08-18T04:15:47.993589 #10321]  INFO -- :   Parameters: {"utf8"=>"✓", "mktCap"=>"", "dividend"=>"", "lowPercent"=>"", "commit"=>"Search"}
+I, [2016-08-18T04:15:53.031411 #10321]  INFO -- :   Rendered welcome/search.html.erb (0.9ms)
+I, [2016-08-18T04:15:53.032467 #10321]  INFO -- : Completed 200 OK in 5039ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+I, [2016-08-18T04:16:21.994237 #10321]  INFO -- : Started GET "/" for 107.9.189.176 at 2016-08-18 04:16:21 +0000
+I, [2016-08-18T04:16:21.998460 #10321]  INFO -- : Processing by WelcomeController#index as HTML
+I, [2016-08-18T04:16:22.001278 #10321]  INFO -- :   Rendered welcome/index.html.erb (1.1ms)
+I, [2016-08-18T04:16:22.001664 #10321]  INFO -- : Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+I, [2016-08-18T04:16:26.559344 #10321]  INFO -- : Started GET "/" for 107.9.189.176 at 2016-08-18 04:16:26 +0000
+I, [2016-08-18T04:16:26.560511 #10321]  INFO -- : Processing by WelcomeController#index as HTML
+I, [2016-08-18T04:16:26.561611 #10321]  INFO -- :   Rendered welcome/index.html.erb (0.4ms)
+I, [2016-08-18T04:16:26.561817 #10321]  INFO -- : Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
